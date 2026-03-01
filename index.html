@@ -1,22 +1,77 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
+
 <head>
 <meta charset="utf-8">
 <title>DFMPro Flyer</title>
 
 <style>
+
+/* ===== 全体 ===== */
 body{
-  font-family:sans-serif;
-  text-align:center;
-  margin:20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  margin:0;
   background:#f5f5f5;
+  color:#222;
 }
 
+/* ===== ヒーロー（上部セールスエリア） ===== */
+.hero{
+  background: linear-gradient(135deg,#f4f8ff,#e9f1ff);
+  padding:60px 20px;
+  text-align:center;
+}
+
+.hero-inner{
+  max-width:800px;
+  margin:auto;
+  line-height:1.9;
+}
+
+.hero h1{
+  margin-bottom:10px;
+}
+
+.hero h3{
+  font-weight:600;
+}
+
+/* ===== 悩みリスト ===== */
+.problem{
+  margin-top:20px;
+  text-align:left;
+  display:inline-block;
+}
+
+.problem ul{
+  margin-top:10px;
+}
+
+/* ===== ダウンロードボタン ===== */
+.download{
+  display:inline-block;
+  margin-top:20px;
+  padding:12px 24px;
+  background:#2b6cff;
+  color:white;
+  text-decoration:none;
+  border-radius:6px;
+  font-weight:bold;
+  transition:0.2s;
+}
+
+.download:hover{
+  background:#1f4fd1;
+}
+
+/* ===== PDF表示エリア ===== */
 .container{
+  max-width:1000px;
+  margin:40px auto;
   background:white;
   padding:20px;
   border-radius:10px;
-  box-shadow:0 0 10px rgba(0,0,0,0.1);
+  box-shadow:0 10px 25px rgba(0,0,0,0.1);
 }
 
 iframe{
@@ -25,48 +80,49 @@ iframe{
   border:none;
 }
 
-a{
-  font-size:18px;
-  text-decoration:none;
-}
 </style>
-
 </head>
 
 <body>
 
+<!-- ===== 上部セールストーク ===== -->
+<div class="hero">
+  <div class="hero-inner">
+
+    <h1>DFMPro for Creo Parametric</h1>
+
+    <h3>設計初期から「つくれる設計」を実現しませんか？</h3>
+
+    <p>
+      DFMProは、CAD設計段階で製造性（Manufacturability）を自動評価し、
+      加工・成形・組立における問題を早期に発見します。
+      <br>
+      試作後の手戻り、加工トラブル、設計属人化を防ぎ、
+      設計と製造の分断を解消します。
+    </p>
+
+    <div class="problem">
+      ✓ こんなお悩みありませんか？
+      <ul>
+        <li>試作で毎回問題が見つかる</li>
+        <li>加工部門から設計変更が戻る</li>
+        <li>設計品質が担当者依存になっている</li>
+      </ul>
+    </div>
+
+    <br>
+
+    <a class="download" href="DFMPro_Flyer.pdf" download>
+      ↓ PDFをダウンロード
+    </a>
+
+  </div>
+</div>
+
+<!-- ===== PDFビュー ===== -->
 <div class="container">
 
-<h2>DFMPro for Creo Parametric</h2>
-
-<p style="font-size:20px; font-weight:bold; margin-top:10px;">
-設計初期から「つくれる設計」を実現しませんか？
-</p>
-
-<div style="max-width:800px; margin:20px auto; line-height:1.9; text-align:left;">
-
-<p>DFMProは、CAD設計段階で製造性（Manufacturability）を自動評価し、加工・成形・組立における問題を早期に発見します。</p>
-
-<p>試作後の手戻り、加工トラブル、設計属人化を防ぎ、設計と製造の分断を解消します。</p>
-
-</div>
-
-<div style="margin:20px auto; text-align:left; max-width:600px;">
-<b>✔ こんなお悩みありませんか？</b>
-<ul>
-<li>試作で毎回問題が見つかる</li>
-<li>加工部門から設計変更が戻る</li>
-<li>設計品質が担当者依存になっている</li>
-</ul>
-</div>
-
-<p>
-<a href="DFMPro_Flyer.pdf" download>
-⬇ PDFをダウンロード
-</a>
-</p>
-
-<iframe src="DFMPro_Flyer.pdf"></iframe>
+  <iframe src="DFMPro_Flyer.pdf"></iframe>
 
 </div>
 
