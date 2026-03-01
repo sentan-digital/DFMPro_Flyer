@@ -1,130 +1,267 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
-<meta charset="utf-8">
-<title>DFMPro Flyer</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DFMPro for Creo Parametric | Flyer</title>
 
-<style>
+  <style>
+    :root{
+      --bg: #f5f5f5;
+      --text: #222;
+      --muted: rgba(0,0,0,0.65);
+      --card: #ffffff;
+      --shadow: 0 10px 25px rgba(0,0,0,0.10);
+      --blue: #2b6cff;
+      --blueHover: #1f4fd1;
+      --hero1: #f4f8ff;
+      --hero2: #e9f1ff;
+      --radius: 12px;
+    }
 
-/* ===== 全体 ===== */
-body{
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  margin:0;
-  background:#f5f5f5;
-  color:#222;
-}
+    *{ box-sizing:border-box; }
 
-/* ===== ヒーロー（上部セールスエリア） ===== */
-.hero{
-  background: linear-gradient(135deg,#f4f8ff,#e9f1ff);
-  padding:60px 20px;
-  text-align:center;
-}
+    body{
+      margin:0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+    }
 
-.hero-inner{
-  max-width:800px;
-  margin:auto;
-  line-height:1.9;
-}
+    /* ===== ヒーロー ===== */
+    .hero{
+      background: linear-gradient(135deg, var(--hero1), var(--hero2));
+      padding: 64px 20px 42px;
+      text-align:center;
+    }
 
-.hero h1{
-  margin-bottom:10px;
-}
+    .hero-inner{
+      max-width: 920px;
+      margin: 0 auto;
+    }
 
-.hero h3{
-  font-weight:600;
-}
+    .hero h1{
+      margin: 0 0 6px;
+      font-size: clamp(22px, 3.2vw, 34px);
+      letter-spacing: 0.2px;
+    }
 
-/* ===== 悩みリスト ===== */
-.problem{
-  margin-top:20px;
-  text-align:left;
-  display:inline-block;
-}
+    .subtitle{
+      margin: 0 0 18px;
+      font-size: 14px;
+      color: var(--muted);
+    }
 
-.problem ul{
-  margin-top:10px;
-}
+    .hero h2{
+      margin: 14px 0 12px;
+      font-size: clamp(16px, 2.3vw, 22px);
+      font-weight: 700;
+    }
 
-/* ===== ダウンロードボタン ===== */
-.download{
-  display:inline-block;
-  margin-top:20px;
-  padding:12px 24px;
-  background:#2b6cff;
-  color:white;
-  text-decoration:none;
-  border-radius:6px;
-  font-weight:bold;
-  transition:0.2s;
-}
+    /* 本文は読みやすく左揃え */
+    .lead{
+      max-width: 820px;
+      margin: 0 auto;
+      text-align: left;
+      color: var(--text);
+    }
 
-.download:hover{
-  background:#1f4fd1;
-}
+    .lead p{
+      margin: 10px 0;
+    }
 
-/* ===== PDF表示エリア ===== */
-.container{
-  max-width:1000px;
-  margin:40px auto;
-  background:white;
-  padding:20px;
-  border-radius:10px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.1);
-}
+    /* 悩みリスト */
+    .problem{
+      max-width: 820px;
+      margin: 20px auto 0;
+      text-align: left;
+      background: rgba(255,255,255,0.65);
+      border: 1px solid rgba(0,0,0,0.06);
+      border-radius: var(--radius);
+      padding: 16px 18px;
+    }
 
-iframe{
-  width:100%;
-  height:90vh;
-  border:none;
-}
+    .problem-title{
+      font-weight: 700;
+      margin: 0 0 8px;
+    }
 
-</style>
+    .problem ul{
+      margin: 0;
+      padding-left: 1.2em;
+    }
+
+    .problem li{
+      margin: 6px 0;
+    }
+
+    /* CTAボタン */
+    .cta-row{
+      margin-top: 22px;
+      display:flex;
+      justify-content:center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding: 12px 22px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      border: 1px solid rgba(0,0,0,0.05);
+      transition: 0.18s;
+      min-width: 220px;
+    }
+
+    .btn-primary{
+      background: var(--blue);
+      color: #fff;
+      box-shadow: 0 10px 18px rgba(43,108,255,0.18);
+    }
+
+    .btn-primary:hover{
+      background: var(--blueHover);
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost{
+      background: rgba(255,255,255,0.85);
+      color: var(--text);
+    }
+
+    .btn-ghost:hover{
+      background: #fff;
+      transform: translateY(-1px);
+    }
+
+    .note{
+      margin-top: 10px;
+      font-size: 12.5px;
+      color: var(--muted);
+    }
+
+    /* ===== PDFビュー（下部） ===== */
+    .section{
+      max-width: 1100px;
+      margin: 34px auto 70px;
+      padding: 0 20px;
+    }
+
+    .card{
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 18px;
+    }
+
+    .pdf-title{
+      margin: 0 0 10px;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+      display:flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .pdf-title span{
+      color: var(--muted);
+      font-weight: 500;
+      font-size: 12.5px;
+    }
+
+    iframe{
+      width: 100%;
+      height: 88vh;
+      border: none;
+      border-radius: 10px;
+      background: #fff;
+    }
+
+    /* 画面が小さい時はPDFの高さを少し下げる */
+    @media (max-width: 768px){
+      .hero{
+        padding: 52px 16px 34px;
+      }
+      iframe{
+        height: 75vh;
+      }
+      .btn{
+        min-width: 200px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- ===== 上部セールストーク ===== -->
-<div class="hero">
-  <div class="hero-inner">
+  <!-- ===== ヒーロー：価値提案 ===== -->
+  <header class="hero">
+    <div class="hero-inner">
+      <h1>DFMPro for Creo Parametric</h1>
+      <p class="subtitle">Design for Manufacturability Automation Platform</p>
 
-    <h1>DFMPro for Creo Parametric</h1>
+      <h2>設計初期から「つくれる設計」を実現しませんか？</h2>
 
-    <h3>設計初期から「つくれる設計」を実現しませんか？</h3>
+      <div class="lead">
+        <p>
+          DFMProは、CAD設計段階で製造性（Manufacturability）を自動評価し、
+          加工・成形・組立における問題を早期に発見します。
+        </p>
+        <p>
+          試作後の手戻り、加工トラブル、設計属人化を防ぎ、
+          設計と製造の分断を解消します。
+        </p>
+      </div>
 
-    <p>
-      DFMProは、CAD設計段階で製造性（Manufacturability）を自動評価し、
-      加工・成形・組立における問題を早期に発見します。
-      <br>
-      試作後の手戻り、加工トラブル、設計属人化を防ぎ、
-      設計と製造の分断を解消します。
-    </p>
+      <div class="problem">
+        <p class="problem-title">✓ こんなお悩みありませんか？</p>
+        <ul>
+          <li>試作で毎回問題が見つかる</li>
+          <li>加工部門から設計変更が戻る</li>
+          <li>設計品質が担当者依存になっている</li>
+        </ul>
+      </div>
 
-    <div class="problem">
-      ✓ こんなお悩みありませんか？
-      <ul>
-        <li>試作で毎回問題が見つかる</li>
-        <li>加工部門から設計変更が戻る</li>
-        <li>設計品質が担当者依存になっている</li>
-      </ul>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="DFMPro_Flyer.pdf" download>↓ PDFをダウンロード</a>
+        <a class="btn btn-ghost" href="DFMPro_Flyer.pdf" target="_blank" rel="noopener">PDFを別タブで開く</a>
+      </div>
+
+      <div class="note">
+        ※ PDFが表示されない環境では「別タブで開く」からご確認ください。
+      </div>
     </div>
+  </header>
 
-    <br>
+  <!-- ===== PDF表示 ===== -->
+  <main class="section">
+    <div class="card">
+      <div class="pdf-title">
+        <div>Flyer（PDFプレビュー）</div>
+        <span>下部にもダウンロードボタンがあります</span>
+      </div>
 
-    <a class="download" href="DFMPro_Flyer.pdf" download>
-      ↓ PDFをダウンロード
-    </a>
+      <iframe src="DFMPro_Flyer.pdf"></iframe>
 
-  </div>
-</div>
+      <!-- 下にもCTA（スクロール勢対策） -->
+      <div class="cta-row" style="margin-top:18px;">
+        <a class="btn btn-primary" href="DFMPro_Flyer.pdf" download>↓ 資料をダウンロード</a>
+        <a class="btn btn-ghost" href="DFMPro_Flyer.pdf" target="_blank" rel="noopener">PDFを別タブで開く</a>
+      </div>
 
-<!-- ===== PDFビュー ===== -->
-<div class="container">
-
-  <iframe src="DFMPro_Flyer.pdf"></iframe>
-
-</div>
+      <div class="note" style="text-align:center; margin-top:10px;">
+        © sentan-digital
+      </div>
+    </div>
+  </main>
 
 </body>
 </html>
